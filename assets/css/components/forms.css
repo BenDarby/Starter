@@ -1,12 +1,21 @@
 /* Forms
 /* ---------------------------------------------------------- */
 
+.gh-label-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0px;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
 .gh-input,
 .gh-textarea {
     background: var(--color-bg);
-    border-radius: var(--radius);
     border: none;
-    border: solid 1px var(--color-border);
+    height: 62px;
     color: inherit;
     display: block;
     outline: 0;

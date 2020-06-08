@@ -2,10 +2,17 @@
 /* ---------------------------------------------------------- */
 
 .gh-head {
-    padding: 3vw 4vw;
+    padding: 2vw 0;
     font-size: 1.6rem;
     line-height: 1.3em;
     background: inherit;
+    margin-bottom: 7rem;
+}
+
+@media (max-width: 900px) {
+    .gh-head {
+        padding: 4vw 0;
+    }
 }
 
 .gh-head a {
@@ -119,12 +126,8 @@
     height: 33px;
 }
 
-.gh-burger-inner {
-    width: 100%;
-    height: 100%;
-}
-
-.gh-burger-box::before {
+.gh-burger-box::before,
+.gh-burger-box::after {
     position: absolute;
     display: block;
     top: 0;
@@ -139,50 +142,21 @@
     will-change: transform, width;
 }
 
-.gh-burger-inner::before,
-.gh-burger-inner::after {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    content: '';
-    width: 100%;
-    height: 1px;
-    background: currentcolor;
-    transition: transform 250ms cubic-bezier(.2,.7,.3,1), width 250ms cubic-bezier(.2,.7,.3,1);
-    will-change: transform, width;
+.gh-burger-box::before {
+    transform: translatey(-5px);
 }
-
-.gh-burger-inner::before {
-    transform: translatey(-6px);
-}
-.gh-burger-inner::after {
-    transform: translatey(6px);
-}
-
-body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::before {
-    transform: translatey(-8px);
-}
-body:not(.gh-head-open) .gh-burger:hover .gh-burger-inner::after {
-    transform: translatey(8px);
+.gh-burger-box::after {
+    transform: translatey(5px);
 }
 
 .gh-head-open .gh-burger-box::before {
-    width: 0;
-    transform: translatex(19px);
-    transition: transform 200ms cubic-bezier(.2,.7,.3,1), width 200ms cubic-bezier(.2,.7,.3,1);
+    width: 26px;
+    transform: translatex(5px) rotate(45deg);
 }
 
-.gh-head-open .gh-burger-inner::before {
+.gh-head-open .gh-burger-box::after {
     width: 26px;
-    transform: translatex(6px) rotate(135deg);
-}
-
-.gh-head-open .gh-burger-inner::after {
-    width: 26px;
-    transform: translatex(6px) rotate(-135deg);
+    transform: translatex(5px) rotate(-45deg);
 }
 
 
